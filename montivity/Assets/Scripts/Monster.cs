@@ -7,27 +7,36 @@ public class Monster : MonoBehaviour {
 	public string name;
 	public string message;
 
-	public InputField newMessageInputField;
 	public Text displayMesssageText;
+	public InputField newMessageInputField;
 
 	public Text incomingSupportText;
 	public InputField supportInputField;
 
-	public Text friendName;
-	public Text friendStat;
+	public Text friendName1;
+	public Text friendStat1;
+
+	public Text friendName2;
+	public Text friendStat2;
+
+	public Text friendName3;
+	public Text friendStat3;
+
+	public Text friendName4;
+	public Text friendStat4;
 
 	public List<Monster> friends;
 	public List<string> feelsLog;
 
 	void Update()
 	{
-		friendName.text = friends [0].name;
-		friendStat.text = friends [0].message;
+		friendName1.text = friends [0].name;
+		friendStat1.text = friends [0].message;
 	}
 
 	Monster()
 	{
-		name = "foo";
+		name = "";
 		message = "";
 	}
 
@@ -42,7 +51,7 @@ public class Monster : MonoBehaviour {
 		}
 	}
 
-	public void sendSupport()
+	public void receiveSupport()
 	{
 		incomingSupportText.text += supportInputField.text + "\n";
 	}

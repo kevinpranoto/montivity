@@ -9,9 +9,12 @@ public class Monster : MonoBehaviour {
 
 	public Text displayMesssageText;
 	public InputField newMessageInputField;
+	public Image newMessageBox;
+	public Button submitNewMessageButton;
 
 	public Text incomingSupportText;
 	public InputField supportInputField;
+
 
 	public Text friendName1;
 	public Text friendStat1;
@@ -30,8 +33,11 @@ public class Monster : MonoBehaviour {
 
 	void Update()
 	{
-		friendName1.text = friends [0].name;
-		friendStat1.text = friends [0].message;
+		if (friends.Capacity != 0) 
+		{
+			friendName1.text = friends [0].name;
+			friendStat1.text = friends [0].message;
+		}
 	}
 
 	Monster()

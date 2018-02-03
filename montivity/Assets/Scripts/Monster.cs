@@ -7,22 +7,22 @@ public class Monster : MonoBehaviour {
 	public string name;
 	public string message;
 
+	public InputField newMessageInputField;
+	public Text displayMesssageText;
 
-	public InputField newMessage;
-	public Text displayMesssage;
+	public Text incomingSupportText;
+	public InputField supportInputField;
 
+	public Text friendName;
+	public Text friendStat;
 
-	public Monster[] friends;
+	public List<Monster> friends;
 	public List<string> feelsLog;
-	public Support[] incomingSupport;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void Update()
+	{
+		friendName.text = friends [0].name;
+		friendStat.text = friends [0].message;
 	}
 
 	Monster()
@@ -33,8 +33,8 @@ public class Monster : MonoBehaviour {
 
 	public void setMessage()
 	{
-		displayMesssage.text = newMessage.text;
-		message = displayMesssage.text;
+		displayMesssageText.text = newMessageInputField.text;
+		message = displayMesssageText.text;
 		feelsLog.Add (message);
 		for (int i = 0; i < feelsLog.Count; ++i) 
 		{
@@ -42,4 +42,8 @@ public class Monster : MonoBehaviour {
 		}
 	}
 
+	public void sendSupport()
+	{
+		incomingSupportText.text += supportInputField.text + "\n";
+	}
 }

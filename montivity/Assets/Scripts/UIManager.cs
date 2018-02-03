@@ -10,6 +10,9 @@ public class UIManager : MonoBehaviour {
 	public CanvasGroup fortuneCookiePopUp;
 	public Button fortuneCookie;
 
+	public CanvasGroup inboxPopUp;
+	public Button showInboxButton;
+
 	void Start()
 	{
 		Button btnUpdateStatus = updateStatus.GetComponent<Button> ();
@@ -17,6 +20,9 @@ public class UIManager : MonoBehaviour {
 
 		Button btnFortuneCookie = fortuneCookie.GetComponent<Button> ();
 		btnFortuneCookie.onClick.AddListener (ShowFortunePopUpOnClick);
+
+		Button btnShowInbox = showInboxButton.GetComponent<Button> ();
+		btnShowInbox.onClick.AddListener (ShowInbox);
 	}
 
 
@@ -35,5 +41,13 @@ public class UIManager : MonoBehaviour {
 			fortuneCookiePopUp.alpha = 0;
 		else
 			fortuneCookiePopUp.alpha = 1;
+	}
+
+	void ShowInbox()
+	{
+		if (inboxPopUp.alpha == 1)
+			inboxPopUp.alpha = 0;
+		else
+			inboxPopUp.alpha = 1;
 	}
 }

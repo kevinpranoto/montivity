@@ -14,13 +14,22 @@ public class FortuneCookie : MonoBehaviour {
 	{
 		quoteList = new List<string>();
 
-		quoteList.Add ("test fortune");
-		quoteList.Add ("test fortune1");
-		quoteList.Add ("test fortune2");
-		quoteList.Add ("test fortune3");
-		quoteList.Add ("test fortune4");
-		quoteList.Add ("test fortune5");
-		quoteList.Add ("test fortune6");
+		quoteList.Add ("Reach for joy and all else will follow.");
+		quoteList.Add ("Move in the direction of your dreams.");
+		quoteList.Add ("Bloom where you are planted.");
+		quoteList.Add ("A journey of a thousand miles begins with a single step.");
+		quoteList.Add ("Get your mind set… confidence will lead you on.");
+		quoteList.Add ("Love is like wildflowers…it is often found in the most unlikely places.");
+		quoteList.Add ("When one door closes, another opens.");
+		quoteList.Add ("In dreams and in love there are no impossibilities.");
+		quoteList.Add ("Don’t give up.");
+		quoteList.Add ("You will become great if you believe in yourself.");
+		quoteList.Add ("You can make your own happiness.");
+		quoteList.Add ("If winter comes, can spring be far behind?");
+		quoteList.Add ("You will conquer obstacles to achieve success.");
+		quoteList.Add ("Every day is a new day.");
+		quoteList.Add ("Find a peaceful place where you can make plans for the future.");
+
 
 	}
 

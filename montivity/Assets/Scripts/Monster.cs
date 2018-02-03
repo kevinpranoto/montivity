@@ -9,12 +9,10 @@ public class Monster : MonoBehaviour {
 
 	public Text displayMesssageText;
 	public InputField newMessageInputField;
-	public Image newMessageBox;
 	public Button submitNewMessageButton;
 
 	public Text incomingSupportText;
 	public InputField supportInputField;
-
 
 	public Text friendName1;
 	public Text friendStat1;
@@ -30,6 +28,12 @@ public class Monster : MonoBehaviour {
 
 	public List<Monster> friends;
 	public List<string> feelsLog;
+
+	void Start()
+	{
+		Button btn = submitNewMessageButton.GetComponent<Button> ();
+		btn.onClick.AddListener (setMessage);
+	}
 
 	void Update()
 	{
@@ -61,4 +65,5 @@ public class Monster : MonoBehaviour {
 	{
 		incomingSupportText.text += supportInputField.text + "\n";
 	}
+
 }

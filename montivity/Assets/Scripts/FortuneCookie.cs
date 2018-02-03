@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class FortuneCookie : MonoBehaviour {
 
 	public Text showQuote;
+	public Button generateFortune;
 
 	private List<string> quoteList;
 
@@ -33,7 +34,13 @@ public class FortuneCookie : MonoBehaviour {
 
 	}
 
-	public void generateFortune()
+	void Start()
+	{
+		Button btnGenerateFortune = generateFortune.GetComponent<Button> ();
+		btnGenerateFortune.onClick.AddListener (showFortuneOnClick);
+	}
+
+	public void showFortuneOnClick()
 	{
 		showQuote.text = quoteList [Random.Range (0, (quoteList.Capacity) - 1)];
 	}

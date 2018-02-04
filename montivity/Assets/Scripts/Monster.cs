@@ -12,7 +12,7 @@ public class Monster : MonoBehaviour {
 	public Button submitNewMessageButton;
 
 	public Text incomingSupportText;
-	public List<string> inbox;
+	public List<string> inboxList;
 	public InputField supportInputField; // multiple instances on different friends screen
 
 	public Text friendName1;
@@ -34,7 +34,6 @@ public class Monster : MonoBehaviour {
 	{
 		Button btnSubmitNewMessage = submitNewMessageButton.GetComponent<Button> ();
 		btnSubmitNewMessage.onClick.AddListener (setMessage);
-
 	}
 
 	void Update()
@@ -44,6 +43,8 @@ public class Monster : MonoBehaviour {
 			friendName1.text = friends [0].name;
 			friendStat1.text = friends [0].message;
 		}
+
+
 	}
 
 	Monster()
@@ -66,7 +67,7 @@ public class Monster : MonoBehaviour {
 	public void receiveSupport()
 	{
 		incomingSupportText.text += supportInputField.text + "\n";
-		inbox.Add (supportInputField.text);
+		inboxList.Add (supportInputField.text);
 	}
 
 }

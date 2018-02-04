@@ -49,5 +49,7 @@ public class UIManager : MonoBehaviour {
 			inboxPopUp.alpha = 0;
 		else
 			inboxPopUp.alpha = 1;
+
+		Debug.Log ("inboxPopUp toggled");
 	}
 }

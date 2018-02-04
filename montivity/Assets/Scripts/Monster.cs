@@ -7,6 +7,8 @@ public class Monster : MonoBehaviour {
 	public string name;
 	public string message;
 
+	public Text monsterNameDisplay;
+
 	public Text displayMesssageText;
 	public InputField newMessageInputField;
 	public Button submitNewMessageButton;
@@ -46,6 +48,8 @@ public class Monster : MonoBehaviour {
 
 		selfName2.text = name;
 		selfStat2.text = message;
+
+		monsterNameDisplay.text = name;
 	}
 
 	Monster()

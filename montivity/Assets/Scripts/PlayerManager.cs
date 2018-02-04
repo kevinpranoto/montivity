@@ -19,9 +19,6 @@ public class PlayerManager : MonoBehaviour {
 			switchToPlayer(1);
 		else if (Input.GetKeyDown (KeyCode.RightArrow))
 			switchToPlayer(2);
-		else if (Input.GetKeyDown (KeyCode.DownArrow))
-			switchToPlayer(3);
-		
 	}
 
 	void switchToPlayer(int n)
@@ -29,9 +26,11 @@ public class PlayerManager : MonoBehaviour {
 		for (int i = 0; i < Players.Length; ++i) 
 		{
 			Players [i].alpha = 0;
+			Players [i].transform.SetAsFirstSibling ();
 		}
 
 		Players [n].alpha = 1;
+		Players [n].transform.SetAsLastSibling ();
 		Debug.Log (n);
 	}
 }

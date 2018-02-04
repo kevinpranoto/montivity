@@ -61,6 +61,7 @@ public class Monster : MonoBehaviour {
 	public void setMessage()
 	{
 		displayMesssageText.text = newMessageInputField.text;
+		newMessageInputField.text = "";
 		message = displayMesssageText.text;
 		feelsLog.Add (message);
 		for (int i = 0; i < feelsLog.Count; ++i) 
@@ -74,12 +75,12 @@ public class Monster : MonoBehaviour {
 	public void receiveSupport()
 	{
 		if (supportInputField1.text != "") {
-			incomingSupportText.text += supportInputField1.text + "\n";
+			incomingSupportText.text += "\"" + supportInputField1.text + "\"" + "\n";
 			supportInputField1.text = "";
 			inboxList.Add (supportInputField1.text);
 		}
 		if (supportInputField2.text != "") {
-			incomingSupportText.text += supportInputField2.text + "\n";
+			incomingSupportText.text += "\"" + supportInputField2.text + "\"" + "\n";
 			supportInputField2.text = "";
 			inboxList.Add (supportInputField2.text);
 		}

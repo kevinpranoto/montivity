@@ -67,16 +67,20 @@ public class Monster : MonoBehaviour {
 		{
 			Debug.Log (feelsLog [i]);
 		}
+		inboxList.Clear ();
+		incomingSupportText.text = "";
 	}
 
 	public void receiveSupport()
 	{
 		if (supportInputField1.text != "") {
 			incomingSupportText.text += supportInputField1.text + "\n";
+			supportInputField1.text = "";
 			inboxList.Add (supportInputField1.text);
 		}
 		if (supportInputField2.text != "") {
 			incomingSupportText.text += supportInputField2.text + "\n";
+			supportInputField2.text = "";
 			inboxList.Add (supportInputField2.text);
 		}
 	}

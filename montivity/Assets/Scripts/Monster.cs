@@ -43,8 +43,6 @@ public class Monster : MonoBehaviour {
 			friendName1.text = friends [0].name;
 			friendStat1.text = friends [0].message;
 		}
-
-
 	}
 
 	Monster()

@@ -13,16 +13,22 @@ public class UIManager : MonoBehaviour {
 	public CanvasGroup inboxPopUp;
 	public Button showInboxButton;
 
+	public CanvasGroup friendsPopUp;
+	public Button showFriendsButton;
+
 	void Start()
 	{
 		Button btnUpdateStatus = updateStatus.GetComponent<Button> ();
 		btnUpdateStatus.onClick.AddListener (ShowStatusOnClick);
 
+		Button btnShowInbox = showInboxButton.GetComponent<Button> ();
+		btnShowInbox.onClick.AddListener (ShowInbox);
+
 		Button btnFortuneCookie = fortuneCookie.GetComponent<Button> ();
 		btnFortuneCookie.onClick.AddListener (ShowFortunePopUpOnClick);
 
-		Button btnShowInbox = showInboxButton.GetComponent<Button> ();
-		btnShowInbox.onClick.AddListener (ShowInbox);
+		Button btnFriends = showFriendsButton.GetComponent<Button> ();
+		btnFriends.onClick.AddListener (ShowFriends);
 	}
 
 
@@ -51,5 +57,15 @@ public class UIManager : MonoBehaviour {
 			inboxPopUp.alpha = 1;
 
 		Debug.Log ("inboxPopUp toggled");
+	}
+
+	void ShowFriends()
+	{
+		if (friendsPopUp.alpha == 1)
+			friendsPopUp.alpha = 0;
+		else
+			friendsPopUp.alpha = 1;
+
+		Debug.Log ("friendsPopUp toggled");
 	}
 }

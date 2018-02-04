@@ -34,37 +34,64 @@ public class UIManager : MonoBehaviour {
 
 	void ShowStatusOnClick()
 	{
+		newStatusBox.transform.SetAsLastSibling ();
 		Debug.Log ("pressed");
-		if (newStatusBox.alpha == 1)
+		if (newStatusBox.alpha == 1) {
 			newStatusBox.alpha = 0;
-		else
+			newStatusBox.interactable = false;
+			newStatusBox.blocksRaycasts = false;
+		} else {
+			
 			newStatusBox.alpha = 1;
+			newStatusBox.interactable = true;
+			newStatusBox.blocksRaycasts = true;
+		}
 	}
 
 	void ShowFortunePopUpOnClick()
 	{
-		if (fortuneCookiePopUp.alpha == 1)
+		fortuneCookiePopUp.transform.SetAsLastSibling ();
+		if (fortuneCookiePopUp.alpha == 1) {
 			fortuneCookiePopUp.alpha = 0;
-		else
+			fortuneCookiePopUp.interactable = false;
+			fortuneCookiePopUp.blocksRaycasts = false;
+		} else {
 			fortuneCookiePopUp.alpha = 1;
+			fortuneCookiePopUp.interactable = true;
+			fortuneCookiePopUp.blocksRaycasts = true;
+		}
 	}
 
 	void ShowInbox()
 	{
-		if (inboxPopUp.alpha == 1)
+
+		inboxPopUp.transform.SetAsLastSibling ();
+		if (inboxPopUp.alpha == 1) {
 			inboxPopUp.alpha = 0;
-		else
+			inboxPopUp.interactable = false;
+			inboxPopUp.blocksRaycasts = false;
+		} else {
 			inboxPopUp.alpha = 1;
+			inboxPopUp.interactable = true;
+			inboxPopUp.blocksRaycasts = true;
+		}
 
 		Debug.Log ("inboxPopUp toggled");
 	}
 
 	void ShowFriends()
 	{
-		if (friendsPopUp.alpha == 1)
+
+		friendsPopUp.transform.SetAsLastSibling ();
+		if (friendsPopUp.alpha == 1) {
 			friendsPopUp.alpha = 0;
-		else
+			friendsPopUp.interactable = false;
+			friendsPopUp.blocksRaycasts = false;
+		} else {
 			friendsPopUp.alpha = 1;
+			friendsPopUp.interactable = true;
+			friendsPopUp.blocksRaycasts = true;
+		}
 
 		Debug.Log ("friendsPopUp toggled");
 	}

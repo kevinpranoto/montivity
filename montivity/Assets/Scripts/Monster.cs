@@ -13,19 +13,16 @@ public class Monster : MonoBehaviour {
 
 	public Text incomingSupportText;
 	public List<string> inboxList;
-	public InputField supportInputField; // multiple instances on different friends screen
+	public InputField supportInputField1; // multiple instances on different friends screen
+	public InputField supportInputField2; 
+	public Button submitSupportButton1;
+	public Button submitSupportButton2;
 
-	public Text friendName1;
-	public Text friendStat1;
+	public Text selfName1;
+	public Text selfStat1;
 
-	public Text friendName2;
-	public Text friendStat2;
-
-	public Text friendName3;
-	public Text friendStat3;
-
-	public Text friendName4;
-	public Text friendStat4;
+	public Text selfName2;
+	public Text selfStat2;
 
 	public List<Monster> friends;
 	public List<string> feelsLog;
@@ -34,15 +31,21 @@ public class Monster : MonoBehaviour {
 	{
 		Button btnSubmitNewMessage = submitNewMessageButton.GetComponent<Button> ();
 		btnSubmitNewMessage.onClick.AddListener (setMessage);
+
+		Button btnSubmitSupport1 = submitSupportButton1.GetComponent<Button> ();
+		btnSubmitSupport1.onClick.AddListener (receiveSupport);
+
+		Button btnSubmitSupport2 = submitSupportButton2.GetComponent<Button> ();
+		btnSubmitSupport2.onClick.AddListener (receiveSupport);
 	}
 
 	void Update()
 	{
-		if (friends.Capacity != 0) 
-		{
-			friendName1.text = friends [0].name;
-			friendStat1.text = friends [0].message;
-		}
+		selfName1.text = name;
+		selfStat1.text = message;
+
+		selfName2.text = name;
+		selfStat2.text = message;
 	}
 
 	Monster()
@@ -64,8 +67,14 @@ public class Monster : MonoBehaviour {
 
 	public void receiveSupport()
 	{
-		incomingSupportText.text += supportInputField.text + "\n";
-		inboxList.Add (supportInputField.text);
+		if (supportInputField1.text != "") {
+			incomingSupportText.text += supportInputField1.text + "\n";
+			inboxList.Add (supportInputField1.text);
+		}
+		if (supportInputField2.text != "") {
+			incomingSupportText.text += supportInputField2.text + "\n";
+			inboxList.Add (supportInputField2.text);
+		}
 	}
 
 }

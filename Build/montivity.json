@@ -1,0 +1,13 @@
+{
+"companyName": "Montivity Team",
+"productName": "montivity",
+"dataUrl": "montivity.data.unityweb",
+"asmCodeUrl": "montivity.asm.code.unityweb",
+"asmMemoryUrl": "montivity.asm.memory.unityweb",
+"asmFrameworkUrl": "montivity.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
